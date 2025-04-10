@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Car Reservation Form</title>
+    <link rel="stylesheet" href="registration.css">
+
+
+  </head>
+
+  <body>
+
+    <h2>Car Reservation Form</h2>
+
+    <form id="reservationForm">
+      <label>Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label>Email Address:</label>
+      <input type="email" id="email" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" id="phone" required>
+
+      <label>Select Car:</label>
+      <select id="car" required>
+        <option value="">-- Choose a car --</option>
+        <option value="Tesla">Tesla Model S</option>
+        <option value="Tesla">Tesla Model E</option>
+        <option value="Tesla">Tesla Model Y</option>
+        <option value="Mitsubishi">Mirage</option>
+        <option value="Mitsubishi">Xpander</option>
+        <option value="Mitsubishi">Pajero Sports</option>
+        <option value="Mazda">Mazda CX5</option>
+        <option value="Mazda">Mazda CX-30</option>
+        <option value="Mazda">Mazda CX-9</option>
+        <option value="Toyota">Corolla</option>
+        <option value="Toyota">Innova</option>
+        <option value="Toyota">Fortuner</option>
+        <option value="Honda">Amaze</option>
+        <option value="Honda">Elevate</option>
+        <option value="Honda">City</option>
+      </select>
+
+      <label>Pickup Date:</label>
+      <input type="date" id="pickupDate" required>
+
+      <label>Dropoff Date:</label>
+      <input type="date" id="dropoffDate" required>
+
+      <label>Pickup Location:</label>
+      <input type="text" id="pickupLocation" required>
+
+      <label>Dropoff Location:</label>
+      <input type="text" id="dropoffLocation" required>
+
+      <label>Additional Notes:</label>
+      <textarea id="notes" rows="3"></textarea>
+
+      <button type="submit">Submit Reservation</button>
+    </form>
+
+    <div class="result" id="resultBox">
+      <h3>Reservation Details</h3>
+      <p><strong>Name:</strong> <span id="resName"></span></p>
+      <p><strong>Email:</strong> <span id="resEmail"></span></p>
+      <p><strong>Phone:</strong> <span id="resPhone"></span></p>
+      <p><strong>Car:</strong> <span id="resCar"></span></p>
+      <p><strong>Pickup Date:</strong> <span id="resPickupDate"></span></p>
+      <p><strong>Dropoff Date:</strong> <span id="resDropoffDate"></span></p>
+      <p><strong>Pickup Location:</strong> <span id="resPickupLocation"></span></p>
+      <p><strong>Dropoff Location:</strong> <span id="resDropoffLocation"></span></p>
+      <p><strong>Notes:</strong> <span id="resNotes"></span></p>
+    </div>
+
+    <script>
+      document.getElementById('reservationForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        document.getElementById('resName').textContent = document.getElementById('name').value;
+        document.getElementById('resEmail').textContent = document.getElementById('email').value;
+        document.getElementById('resPhone').textContent = document.getElementById('phone').value;
+        document.getElementById('resCar').textContent = document.getElementById('car').value;
+        document.getElementById('resPickupDate').textContent = document.getElementById('pickupDate').value;
+        document.getElementById('resDropoffDate').textContent = document.getElementById('dropoffDate').value;
+        document.getElementById('resPickupLocation').textContent = document.getElementById('pickupLocation').value;
+        document.getElementById('resDropoffLocation').textContent = document.getElementById('dropoffLocation').value;
+        document.getElementById('resNotes').textContent = document.getElementById('notes').value || 'N/A';
+
+        document.getElementById('resultBox').style.display = 'block';
+      });
+    </script>
+
+  </body>
+
+</html>

@@ -47,6 +47,8 @@
   border-radius: 0.5rem;
   transition: 0.3s;
   cursor: pointer;
+  gap: 10;
+  display: flex;
 }
 
 .btn:hover {
@@ -155,7 +157,8 @@ nav {
 }
 
 .nav__btns {
-  display: none;
+  display: flex;
+  gap: 12px;
 }
 
 .header__container {

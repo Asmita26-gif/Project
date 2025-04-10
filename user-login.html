@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .login-container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        width: 340px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #6c5ce7;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      input {
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #6c5ce7;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #5a4ad1;
+      }
+
+      #message {
+        margin-top: 15px;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login-container">
+      <h2>User Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+
+        <button type="submit">Login</button>
+        <p id="message"></p>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const message = document.getElementById("message");
+
+        if (username === "" || password === "") {
+          message.textContent = "Username and password are required!";
+          message.style.color = "red";
+        } else {
+          // Simulated login
+          if (username === "user" && password === "1234") {
+            message.textContent = "Login successful! Redirecting...";
+            message.style.color = "green";
+
+            setTimeout(() => {
+              window.location.href = "dashboard.html"; // replace with actual redirect
+            }, 1500);
+          } else {
+            message.textContent = "Invalid username or password.";
+            message.style.color = "red";
+          }
+        }
+      });
+    </script>
+  </body>
+
+</html>
